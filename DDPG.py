@@ -38,7 +38,7 @@ def main():
 
     log_dir = "./ddpg_carla/"
     os.makedirs(log_dir, exist_ok=True)
-
+    #checkpoint
     checkpoint_callback = CheckpointCallback(save_freq=1000, save_path=log_dir, name_prefix='ddpg_carla_model')
     eval_callback = EvalCallback(env, best_model_save_path=log_dir, log_path=log_dir, eval_freq=500, deterministic=True, render=False)
 
